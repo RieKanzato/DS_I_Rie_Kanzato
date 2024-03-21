@@ -1,39 +1,47 @@
 package aula01;
-
+import java.io.IOException;
 import java.util.Scanner;
 
 class imc {
-    public static void main(String[] args){
-        Scanner myObj = new Scanner(System.in);
-        String nome;
-        float peso;
-        float altura;
+    public static void main(String[] args) throws IOException{
 
-        System.out.println("insira seu nome");
-        nome = myObj.nextLine();
+        Scanner aaaa = new Scanner(System.in);
+        try {
+            String nome;
+            float peso;
+            float altura;
 
-        System.out.println("insira seu peso");
-        peso = myObj.nextFloat();
+           
 
-        System.out.println("insira sua altura");
-        altura = myObj.nextFloat();
+            System.out.println("insira seu nome:");
+            nome = aaaa.nextLine();
 
-        float imc = peso/(altura * altura)
+            System.out.println("insira seu peso:");
+            peso = aaaa.nextFloat();
 
-        if(imc < 16.9){
-            System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situação é muito abaixo do peso");
-        } else if(imc > 17 && imc < 18.4){
-            System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situação é abaixo do peso");
-        } else if(imc > 18.5 && imc > 24.9){
-            System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situação é normal");
-        } else if(imc > 25 && imc < 29.9){
-            System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situação é acima do peso");
-        } else if(imc > 30 && imc < 34.9){
-            System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situação é obesidade grau I");
-        } else if(imc > 35 && imc < 40){
-            System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situação é obesidade grau II");
-        } else {
-            System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situação é obesidae grau III");
+            System.out.println("insira sua altura:");
+            altura = aaaa.nextFloat();
+
+            float result = peso/(altura * altura);
+
+            if(result < 16.9){
+                System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situacao e muito abaixo do peso");
+            } else if(result > 17 && result < 18.4){
+                System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situacao e abaixo do peso");
+            } else if(result > 18.5 && result > 24.9){
+                System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situacao e normal");
+            } else if(result > 25 && result < 29.9){
+                System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situacao e acima do peso");
+            } else if(result > 30 && result < 34.9){
+                System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situacao e obesidade grau I");
+            } else if(result > 35 && result < 40){
+                System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situacao e obesidade grau II");
+            } else {
+                System.out.println(nome + "tem" + altura + "de altura e pesa" + peso + "kg. Sua situacao e obesidae grau III");
+            }
+        }
+        finally {
+            aaaa.close();
         }
     }
 }
