@@ -1,4 +1,3 @@
-package aula02;
 import java.util.Scanner;
 
 public class Exercicio2 {
@@ -14,6 +13,10 @@ public class Exercicio2 {
         System.out.println("insira uma palavra: ");
         palavra = myObj.nextLine();
 
+
+        leitorFrase(frase, palavra);
+        String receba = leitorFrase(frase, palavra);
+        System.out.println(receba);
     }
 
     static String leitorFrase(String frase, String palavra) {
